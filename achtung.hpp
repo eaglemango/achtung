@@ -51,6 +51,7 @@ RecursionStack global_recursion_stack;
     \
     if (top_item == nullptr) { \
         std::cout << "Uncaught achtung " << achtung << std::endl; \
+        abort(); \
     } else { \
         global_recursion_stack.root = top_item->next_item; \
         longjmp(top_item->env, achtung); \
